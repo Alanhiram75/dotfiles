@@ -54,7 +54,6 @@ Focused on simplicity, speed and a clean terminal experience.
 
 ## 🎯 Philosophy
 
-* Minimal
 * Fast
+* Minimal
 * Terminal-centric
-* Wayland native
