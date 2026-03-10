@@ -6,6 +6,14 @@ Focused on simplicity, speed and a clean terminal experience.
 
 ---
 
+## 🖼️ Preview
+
+<p align="center">
+  <img src="desktop.png" width="900">
+</p>
+
+---
+
 ## 🖥️ Environment
 
 | Component          | Setup   |
@@ -30,11 +38,16 @@ Focused on simplicity, speed and a clean terminal experience.
 ## 📁 Structure
 
 ```
-.config
-├── niri
+.
+├── fastfetch
+│   └── config.jsonc
 ├── fish
-├── starship
-└── fastfetch
+│   ├── conf.d
+│   └── config.fish
+├── niri
+│   └── config.kdl
+├── starship.toml
+└── desktop.png
 ```
 
 ---
