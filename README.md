@@ -1,4 +1,4 @@
-# 📝 My Dotfiles
+# 📝 Dotfiles
 
 Personal Linux configuration built around a **minimal Wayland workflow**.
 
