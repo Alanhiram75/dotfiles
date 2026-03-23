@@ -60,6 +60,7 @@ alias tub='pipes-rs'     # <-- Generación fantástica y atractiva de tuberías 
 alias lg='lazygit'       # <-- Uso rápido de 'lazygit'
 alias py='python3'       # <-- Uso rápido de 'python3'
 alias n='yazi'           # <-- Uso rápido de 'yazi'
+alias po='poweroff'
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
