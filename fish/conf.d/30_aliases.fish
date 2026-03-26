@@ -6,7 +6,7 @@
 # 1.           LISTADOS (EZA)
 # =============================================
 # Aliases/shortcuts para reemplazar 'ls' con 'eza'
-alias ls='eza -1 --group-directories-first --icons=always --color=always --no-user --no-permissions --no-time --no-filesize | sed "s/^/ - /"'
+alias ls='eza -1 --group-directories-first --icons=always --color=always --no-user --no-permissions --no-time --no-filesize | sed "s/^/ - /"' # <-- Listado estándar con eza
 alias la='eza --classify=auto --color=always --group-directories-first --sort=extension -A --icons' # <-- Listado con iconos y ocultos
 alias lt='eza --tree --level=5 --group-directories-first --icons --no-user --no-permissions --no-time --no-filesize'
 alias l\.="eza -a | grep -e '^\.'"                                                                  # <-- Solo archivos/dirs ocultos 
@@ -20,8 +20,8 @@ alias fixpacman="sudo rm /var/lib/pacman/db.lck"         # <-- Eliminar bloqueo 
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'          # <-- Limpiar dependencias huérfanas
 alias jctl="journalctl -p 3 -xb"                         # <-- Ver logs importantes del sistema
 alias update='yay && flatpak update'                     # <-- Actualizar todos los paquetes
-alias sonido="pavucontrol"                               # Configuración de sonido
-alias syu='sudo pacman -Syu'
+alias sonido="pavucontrol"                               # <-- Configuración de sonido
+alias syu='sudo pacman -Syu'                             # <-- Actualizar el sistema con pacman
 alias mirrors='sudo reflector --latest 30 --protocol https --sort rate --save /etc/pacman.d/mirrorlist' # ↴
 # ↳ Selecciona los 30 servidores https más actualizados, organizados por velocidad de descarga, reescribe en pacman.d/mirrorlist ↲
 
@@ -60,7 +60,8 @@ alias tub='pipes-rs'     # <-- Generación fantástica y atractiva de tuberías 
 alias lg='lazygit'       # <-- Uso rápido de 'lazygit'
 alias py='python3'       # <-- Uso rápido de 'python3'
 alias n='yazi'           # <-- Uso rápido de 'yazi'
-alias po='poweroff'
+alias po='poweroff'      # <-- Apagar el sistema
+alias sl='sleep'         # <-- Pausar la ejecución temporalmente
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
