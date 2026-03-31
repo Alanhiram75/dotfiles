@@ -62,6 +62,7 @@ alias py='python3'       # <-- Uso rápido de 'python3'
 alias n='yazi'           # <-- Uso rápido de 'yazi'
 alias po='poweroff'      # <-- Apagar el sistema
 alias ss='systemctl suspend' # <-- Suspender el sistema
+alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
