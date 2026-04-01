@@ -63,6 +63,7 @@ alias n='yazi'           # <-- Uso rápido de 'yazi'
 alias po='poweroff'      # <-- Apagar el sistema
 alias ss='systemctl suspend' # <-- Suspender el sistema
 alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
+alias nlc='cd ~/notes; and lc'  # <-- Ir a notes y lanzar Claude
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
