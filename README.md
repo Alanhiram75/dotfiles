@@ -21,6 +21,7 @@ Focused on simplicity, speed and a clean terminal experience.
 | **Distro**         | CachyOS |
 | **Display Server** | Wayland |
 | **Compositor**     | Niri    |
+| **GPU**            | Inir    |
 
 ---
 
