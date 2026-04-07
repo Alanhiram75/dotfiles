@@ -31,7 +31,8 @@ Focused on simplicity, speed and a clean terminal experience.
 | **Niri**      | Scrollable Wayland compositor |
 | **Fish**      | Friendly interactive shell    |
 | **Starship**  | Fast and minimal prompt       |
-| **Fastfetch** | System information display    |
+| **Fastfetch** | System information display     |
+| **Claude 4.6**| AI assistant (Claude Code CLI)|
 
 ---
 
@@ -49,18 +50,6 @@ Focused on simplicity, speed and a clean terminal experience.
 ├── starship.toml
 └── desktop.png
 ```
-
----
-
-## 🤖 Claude Code
-
-Managed with **Claude Code** (CLI) powered by **Claude Opus 4.6**.
-
-### Workflow
-- Feature work uses isolated **git worktrees** (via `superpowers:using-git-worktrees`)
-- Implementation follows **TDD** and systematic debugging
-- Plans are written before multi-step tasks (`superpowers:writing-plans`)
-- Verification always before claiming completion (`superpowers:verification-before-completion`)
 
 ---
 
