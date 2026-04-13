@@ -77,6 +77,7 @@ alias big="expac -H M '%m\t%n' | sort -h | nl"                                # 
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'                            # <-- Contar paquetes -git
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" # <-- Paquetes recientes
 alias fsh='fastfetch'                                                         # <-- Información rápida del sistema
+alias bigr='sudo du -h --max-depth=1 / | sort -hr'                            # <-- Uso de disco en /
 
 # =============================================
 # 7.         RED Y TEXTO
