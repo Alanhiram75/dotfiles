@@ -1,7 +1,5 @@
 # 📝 Dotfiles
 
-Personal Linux configuration built around a **minimal Wayland workflow**.
-
 Focused on simplicity, speed and a clean terminal experience.
 
 ---
