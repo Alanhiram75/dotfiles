@@ -63,6 +63,7 @@ alias n='yazi'           # <-- Uso rápido de 'yazi'
 alias po='poweroff'      # <-- Apagar el sistema
 alias ss='systemctl suspend; and exit' # <-- Suspender el sistema y cerrar terminal
 alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
+alias ge='gemini'              # <-- Lanzar Gemini CLI
 alias nlc='cd ~/notes; and lc'  # <-- Ir a notes y lanzar Claude
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 alias ui='cd inir && ./setup'                                  # <-- Update inir
