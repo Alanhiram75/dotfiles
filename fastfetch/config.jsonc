@@ -1,4 +1,4 @@
-//   _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+//   _____ _____ _____ _____ _____ _____ _____ _____ _____
 //  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
 //  |   __|     |__   | | | |   __|   __| | | |   --|     |
 //  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  MINIMAL
@@ -12,8 +12,7 @@
         "type": "builtin",
         "source": "arch_small",
         "color": {
-            "1": "cyan",
-            "2": "blue"
+            "1": "#b8bb26"
         },
         "padding": {
             "top": 1,
@@ -23,7 +22,7 @@
     },
 
     "display": {
-        "separator": " ›  "
+        "separator": " › "
     },
 
     "modules": [
@@ -31,38 +30,48 @@
         {
             "type": "os",
             "key": "OS  ",
-            "keyColor": "31"
+            "keyColor": "#89b482"
         },
         {
             "type": "kernel",
             "key": "KER ",
-            "keyColor": "32"
+            "keyColor": "#89b482"
         },
         {
             "type": "packages",
             "format": "{} (pacman)",
             "key": "PKG ",
-            "keyColor": "33"
+            "keyColor": "#89b482"
         },
         {
             "type": "shell",
             "key": "SH  ",
-            "keyColor": "34"
+            "keyColor": "#89b482"
         },
         {
             "type": "terminal",
             "key": "TER ",
-            "keyColor": "35"
+            "keyColor": "#89b482"
         },
         {
             "type": "wm",
             "key": "WM  ",
-            "keyColor": "36"
+            "keyColor": "#89b482"
+        },
+        {
+            "type": "de",
+            "key": "DE  ",
+            "keyColor": "#89b482"
+        },
+        {
+            "type": "init",
+            "key": "INIT",
+            "keyColor": "#89b482"
         },
         {
             "type": "memory",
             "key": "RAM ",
-            "keyColor": "37"
+            "keyColor": "#89b482"
         },
         "break"
     ]
