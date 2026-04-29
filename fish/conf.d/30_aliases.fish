@@ -105,3 +105,4 @@ alias glo5='git log --oneline -5' # <-- Ver últimos 5 commits en una línea
 alias gco='git checkout'          # <-- Cambiar de rama o versión
 alias gbr='git branch'            # <-- Listar, crear o eliminar ramas
 alias gp='git push'               # <-- Subir cambios al repositorio remoto
+alias gsync='git fetch origin; git reset --hard origin/main'  # <-- Sincroniza repo local con origin/main (borra cambios locales)
