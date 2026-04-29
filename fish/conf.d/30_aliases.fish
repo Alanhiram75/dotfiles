@@ -106,3 +106,5 @@ alias gco='git checkout'          # <-- Cambiar de rama o versión
 alias gbr='git branch'            # <-- Listar, crear o eliminar ramas
 alias gp='git push'               # <-- Subir cambios al repositorio remoto
 alias gsync='git fetch origin; git reset --hard origin/main'  # <-- Sincroniza repo local con origin/main (borra cambios locales)
+alias gpl='git pull'                                 # <-- Pull del repositorio remoto
+alias gplr='git pull --rebase origin main'           # <-- Pull con rebase de origin/main
