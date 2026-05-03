@@ -21,7 +21,7 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'          # <-- Limpiar dependenc
 alias jctl="journalctl -p 3 -xb"                         # <-- Ver logs importantes del sistema
 alias update='yay && flatpak update'                     # <-- Actualizar todos los paquetes
 alias sonido="pavucontrol"                               # <-- Configuración de sonido
-alias syu='sudo pacman -Syu'                             # <-- Actualizar el sistema con pacman
+alias syu='sudo pacman -Syyu'                            # <-- Actualizar el sistema con pacman
 alias mirrors='sudo reflector --latest 30 --protocol https --sort rate --save /etc/pacman.d/mirrorlist' # ↴
 # ↳ Selecciona los 30 servidores https más actualizados, organizados por velocidad de descarga, reescribe en pacman.d/mirrorlist ↲
 
