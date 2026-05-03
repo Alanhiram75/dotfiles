@@ -4,8 +4,8 @@
     "logo": {
         "type": "kitty",
         "source": "~/.config/fastfetch/cl2.png",
-        "width": 26,
-        "height": 10,
+        "width": 24,
+        "height": 8,
         "padding": {
             "top": 1,
             "left": 1,
