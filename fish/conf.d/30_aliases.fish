@@ -66,7 +66,8 @@ alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
 alias ge='gemini "Lee ~/GEMINI.md y sus referencias en notes/ y programming/ para inicializar"'              # <-- Lanzar Gemini CLI con contexto completo
 alias pipve='python3 -m venv .venv' # <-- Crear entorno virtual de Python
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
-alias ui='cd inir && ./setup'                                  # <-- Update inir
+alias ui='cd inir && ./setup'                                 # <-- Update inir
+alias kali="sudo docker start -ai kali"                       # <-- kali en docker
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
 # =============================================
