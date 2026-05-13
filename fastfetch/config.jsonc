@@ -4,61 +4,64 @@
     "logo": {
         "type": "kitty",
         "source": "~/.config/fastfetch/cl2.png",
-        "width": 24,
+        "width": 23,
         "height": 8,
         "padding": {
             "top": 1,
             "left": 1,
-            "right": 2
+            "right": 4
         }
     },
 
     "display": {
-        "separator": " › "
+        "separator": "  ➜  ",
+        "key": {
+            "width": 10
+        }
     },
 
     "modules": [
         "break",
         {
             "type": "os",
-            "key": "OS  ",
-            "keyColor": "#89b482"
+            "key": "OS",
+            "keyColor": "32"
         },
         {
             "type": "kernel",
-            "key": "KER ",
-            "keyColor": "#89b482"
-        },
-        {
-            "type": "wm",
-            "key": "WM  ",
-            "keyColor": "#89b482"
+            "key": " ├  ",
+            "keyColor": "32"
         },
         {
             "type": "packages",
             "format": "{} (pacman)",
-            "key": "PKG ",
-            "keyColor": "#89b482"
-        },
-        {
-            "type": "terminal",
-            "key": "TER ",
-            "keyColor": "#89b482"
+            "key": " ├ 󰏖 ",
+            "keyColor": "32"
         },
         {
             "type": "shell",
-            "key": "SH  ",
-            "keyColor": "#89b482"
+            "key": " ├ 󰞷 ",
+            "keyColor": "32"
+        },
+        {
+            "type": "wm",
+            "key": " ├ 󱂬 ",
+            "keyColor": "32"
+        },
+        {
+            "type": "terminal",
+            "key": " ├ 󰄛 ",
+            "keyColor": "32"
         },
         {
             "type": "memory",
-            "key": "RAM ",
-            "keyColor": "#89b482"
+            "key": " ├ 󰍛 ",
+            "keyColor": "32"
         },
         {
             "type": "command",
-            "key": "AGE ",
-            "keyColor": "#89b482",
+            "key": " └ 󰅐 ",
+            "keyColor": "32",
             "text": "echo $(( ($(date +%s) - $(date -d '2026-02-15' +%s)) / 86400 )) days"
         },
         "break"

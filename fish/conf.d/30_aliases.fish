@@ -67,7 +67,7 @@ alias ge='gemini "Lee ~/GEMINI.md y sus referencias en notes/ y programming/ par
 alias pipve='python3 -m venv .venv' # <-- Crear entorno virtual de Python
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 alias ui='cd inir && ./setup'                                 # <-- Update inir
-alias kali="docker exec -it kali_lab /bin/bash"                       # <-- kali en docker
+alias arch="podman start -ai black-arch-session"              # <-- kali en podman
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
 # =============================================
