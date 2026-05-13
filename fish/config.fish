@@ -15,6 +15,9 @@ for file in $__fish_config_dir/conf.d/*.fish
     source $file
 end
 
+#Zoxide
+zoxide init fish | source
+
 # Mensaje de bienvenida
 set -g fish_greeting ""
 if status is-interactive
