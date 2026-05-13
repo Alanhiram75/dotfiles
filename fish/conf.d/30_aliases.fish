@@ -62,12 +62,12 @@ alias py='python3'       # <-- Uso rápido de 'python3'
 alias n='yazi'           # <-- Uso rápido de 'yazi'
 alias po='poweroff'      # <-- Apagar el sistema
 alias ss='systemctl suspend; and exit' # <-- Suspender el sistema y cerrar terminal
-alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
+alias lc='ollama launch claude --model qwen3-coder-next:cloud' # <-- Lanzar Claude con Ollama
 alias ge='gemini "Lee ~/GEMINI.md y sus referencias en notes/ y programming/ para inicializar"'              # <-- Lanzar Gemini CLI con contexto completo
 alias pipve='python3 -m venv .venv' # <-- Crear entorno virtual de Python
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 alias ui='cd inir && ./setup'                                 # <-- Update inir
-alias kali="sudo docker start -ai kali"                       # <-- kali en docker
+alias kali="docker exec -it kali_lab /bin/bash"                       # <-- kali en docker
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
 # =============================================
