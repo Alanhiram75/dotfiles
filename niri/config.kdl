@@ -258,7 +258,7 @@ binds {
     Mod+Return { spawn "bash" "-c" "$HOME/.config/quickshell/ii/scripts/launch-terminal.sh"; }
     Super+E { spawn "thunar"; }
     Super+O { spawn "obsidian"; }
-    Super+B { spawn "firefox"; }
+    Super+B { spawn "brave"; }
     Super+C { spawn "antigravity"; }    
     // Window management
     Mod+Q repeat=false { spawn "bash" "-c" "$HOME/.config/quickshell/ii/scripts/close-window.sh"; }
