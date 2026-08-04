@@ -259,7 +259,7 @@ binds {
     Super+E { spawn "thunar"; }
     Super+O { spawn "obsidian"; }
     Super+B { spawn "brave"; }
-    Super+C { spawn "antigravity-ide"; }    
+    Super+C { spawn "code"; }
     // Window management
     Mod+Q repeat=false { spawn "bash" "-c" "$HOME/.config/quickshell/ii/scripts/close-window.sh"; }
     Mod+D { maximize-column; }
