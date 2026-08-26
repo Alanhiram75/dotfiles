@@ -20,7 +20,7 @@ alias fixpacman="sudo rm /var/lib/pacman/db.lck"         # <-- Eliminar bloqueo 
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'          # <-- Limpiar dependencias huérfanas
 alias jctl="journalctl -p 3 -xb"                         # <-- Ver logs importantes del sistema
 alias update='yay && flatpak update'                     # <-- Actualizar todos los paquetes
-alias sonido="pavucontrol"                               # <-- Configuración de sonido
+alias sound="pavucontrol"                               # <-- Configuración de sonido
 alias syu='sudo pacman -Syyu'                            # <-- Actualizar el sistema con pacman
 alias mirrors='sudo reflector --latest 30 --protocol https --sort rate --save /etc/pacman.d/mirrorlist' # ↴
 # ↳ Selecciona los 30 servidores https más actualizados, organizados por velocidad de descarga, reescribe en pacman.d/mirrorlist ↲
@@ -62,13 +62,12 @@ alias py='python3'       # <-- Uso rápido de 'python3'
 alias n='yazi'           # <-- Uso rápido de 'yazi'
 alias po='poweroff'      # <-- Apagar el sistema
 alias ss='systemctl suspend; and exit' # <-- Suspender el sistema y cerrar terminal
-alias lc='ollama launch claude' # <-- Lanzar Claude con Ollama
-alias ag='agy "Lee ~/GEMINI.md y sus referencias en notes/ y programming/ para inicializar"'              # <-- Lanzar Antigravity CLI con contexto completo
 alias co='opencode'                                           # <-- Lanzar OpenCode CLI    
 alias pipve='python3 -m venv .venv'                           # <-- Crear entorno virtual de Python
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
 alias ui='cd inir && ./setup'                                 # <-- Update inir
-alias arch="podman start -ai black-arch-session"              # <-- kali en podman
+alias debian="cd ~/programming/labs/debian-lab && ./start.sh && ./connect.sh"  # <-- Iniciar y conectar a Debian en Podman
+alias sql="cd ~/programming/labs/sqlserver-lab && ./start.sh"                  # <-- Iniciar SQL Server en Podman
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
 # =============================================
