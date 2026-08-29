@@ -110,3 +110,42 @@ alias gp='git push'               # <-- Subir cambios al repositorio remoto
 alias gpl='git pull'              # <-- Pull del repositorio remoto
 alias goc='git pull --rebase origin main'  # <-- Organiza los commits
 alias gsync='git fetch origin; git reset --hard origin/main'  # <-- Sincroniza repo local con origin/main (borra cambios locales)
+
+# =============================================
+# 9.              PUERTOS (UFW)
+# =============================================
+# Gestión rápida de puertos en ufw: p open "puerto", p close "puerto", p list
+function p
+    switch "$argv[1]"
+        case open
+            set puerto "$argv[2]"
+            if test -z "$puerto"
+                echo "Uso: p open <puerto>"
+                return 1
+            end
+            sudo ufw allow "$puerto" && echo "Puerto $puerto abierto."
+        case close
+            set puerto "$argv[2]"
+            if test -z "$puerto"
+                echo "Uso: p close <puerto>"
+                return 1
+            end
+            sudo ufw deny "$puerto" && echo "Puerto $puerto cerrado."
+        case list
+            if test -f /etc/ufw/user.rules
+                echo "REGLAS UFW (puertos):"
+                awk '/--dport/ {
+                    for (i=1;i<=NF;i++) {
+                        if ($i == "--dport") port=$(i+1)
+                        if ($i == "-p") proto=$(i+1)
+                        if ($i == "-j") act=$(i+1)
+                    }
+                    printf "  %-5s %-4s %s\n", act, proto, port
+                }' /etc/ufw/user.rules | sort -k3 -n
+            else
+                echo "No se encontró /etc/ufw/user.rules"
+            end
+        case '*'
+            echo "Uso: p {open|close} <puerto> | p list"
+    end
+end
