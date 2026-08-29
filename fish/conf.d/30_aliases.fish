@@ -68,6 +68,7 @@ alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar 
 alias ui='cd inir && ./setup'                                 # <-- Update inir
 alias debian="cd ~/programming/labs/debian-lab && ./start.sh && ./connect.sh"  # <-- Iniciar y conectar a Debian en Podman
 alias sql="cd ~/programming/labs/sqlserver-lab && ./start.sh"                  # <-- Iniciar SQL Server en Podman
+alias work='cd ~/programming/Workflow_Dashboard && ./start.sh && brave http://127.0.0.1:8000' # <-- Iniciar Workflow Dashboard y abrirlo en Brave
 # =============================================
 # 6.      INFORMACIÓN DEL SISTEMA
 # =============================================
