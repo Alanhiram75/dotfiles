@@ -22,39 +22,39 @@
         {
             "type": "os",
             "key": "Hp",
-            "keyColor": "#7ca28b",
-            "outputColor": "#d5e6d6"
+            "keyColor": "{{colors.primary.default.hex}}",
+            "outputColor": "{{colors.on_surface.default.hex}}"
         },
         {
             "type": "kernel",
             "key": " ├ 󰌽 ",
-            "keyColor": "#7ca28b"
+            "keyColor": "{{colors.primary.default.hex}}"
         },
 
         {
             "type": "shell",
             "key": " ├ 󰞷 ",
-            "keyColor": "#7ca28b"
+            "keyColor": "{{colors.primary.default.hex}}"
         },
         {
             "type": "wm",
             "key": " ├ 󱂬 ",
-            "keyColor": "#7ca28b"
+            "keyColor": "{{colors.primary.default.hex}}"
         },
         {
             "type": "terminal",
             "key": " ├ 󰄛 ",
-            "keyColor": "#7ca28b"
+            "keyColor": "{{colors.primary.default.hex}}"
         },
         {
             "type": "memory",
             "key": " ├ 󰍛 ",
-            "keyColor": "#7ca28b"
+            "keyColor": "{{colors.primary.default.hex}}"
         },
         {
             "type": "command",
             "key": " └ 󰅐 ",
-            "keyColor": "#7ca28b",
+            "keyColor": "{{colors.primary.default.hex}}",
             "text": "echo $(( ($(date +%s) - $(date -d '2026-02-15' +%s)) / 86400 )) days"
         },
         "break"

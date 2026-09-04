@@ -1,0 +1,157 @@
+// NIRI KEYBINDS - Serpantinum
+// "Mod" = Super. Cambios visibles tras recargar niri.
+
+binds {
+
+    // ═══════════════════ Sesión & compositor ═══════════════════
+    Mod+Tab repeat=false { toggle-overview; }
+    Mod+Shift+E { quit; }
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+O { power-off-monitors; }
+
+    // ═══════════════════ Serpantinum overlays / herramientas ═══════════════════
+    Super+G { spawn "serpantinum" "msg" "toggle" "guide"; }
+    Mod+Space repeat=false { spawn "serpantinum" "msg" "toggle" "launcher"; } // era overview
+    Mod+V { spawn "serpantinum" "msg" "toggle" "clipboard"; }        // era clipboard
+    Mod+Alt+L allow-when-locked=true { spawn "serpantinum" "lock"; } // era lock activate
+    Mod+Ctrl+Shift+L allow-when-locked=true { spawn "serpantinum" "lock"; } // era lock focus
+
+    Mod+Shift+S { spawn "serpantinum" "screenshot"; }                // era región screenshot
+    // Mod+Shift+X { ... }  // iba a OCR -> no hay en Serpantinum (comentado)
+    // Mod+Shift+A { ... }  // iba a search -> no hay en Serpantinum (comentado)
+    // Ctrl+Shift+S { ... } // iba a snip menu -> no hay (comentado)
+
+    Ctrl+Alt+T { spawn "serpantinum" "msg" "toggle" "wallpaper"; }   // era wallpaper selector
+    Mod+Comma { spawn "serpantinum" "msg" "toggle" "system"; }       // era settings
+    // Mod+Shift+W { ... } // iba a panel family cycle -> no existe (comentado)
+
+    // ═══════════════════ App launchers ═══════════════════
+    Mod+T { spawn "kitty"; }
+    Mod+Return repeat=false { spawn "kitty"; }
+    Super+E { spawn "nautilus"; }
+    Super+O { spawn "obsidian"; }
+    Super+B { spawn "brave"; }
+    Super+Shift+C { spawn "brave" "--new-window" "https://calendar.google.com/calendar/u/0/r"; }
+    Super+C { spawn "vscodium"; }
+
+    // ═══════════════════ Ventanas ═══════════════════
+    Mod+Q repeat=false { close-window; }
+    Mod+D { maximize-column; }
+    Mod+F { fullscreen-window; }
+    Mod+A { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // ═══════════════════ Columnas ═══════════════════
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { spawn "serpantinum" "screenshot" "--record"; }     // era recordWithSound
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+C { center-column; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    // ═══════════════════ Foco (flechas + vim) ═══════════════════
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-down; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+
+    // ═══════════════════ Mover ventanas (flechas + vim) ═══════════════════
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Down  { move-window-down; }
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+J     { move-window-down; }
+    Mod+Shift+K     { move-window-up; }
+    Mod+Shift+L     { move-column-right; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    // ═══════════════════ Multi-monitor ═══════════════════
+    Mod+Ctrl+Left  { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+Up    { focus-monitor-up; }
+    Mod+Ctrl+Down  { focus-monitor-down; }
+    Mod+Ctrl+Shift+Left  { move-column-to-monitor-left; }
+    Mod+Ctrl+Shift+Right { move-column-to-monitor-right; }
+    Mod+Ctrl+Shift+Up    { move-column-to-monitor-up; }
+    Mod+Ctrl+Shift+Down  { move-column-to-monitor-down; }
+
+    // ═══════════════════ Workspaces ═══════════════════
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+Page_Down { focus-workspace-down; }
+    Mod+Page_Up   { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollLeft  { focus-column-left; }
+
+    // ═══════════════════ Capturas (nativa niri) ═══════════════════
+    Print      { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print  { screenshot-window; }
+
+    // ═══════════════════ Hardware / multimedia ═══════════════════
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "serpantinum" "volume" "raise"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "serpantinum" "volume" "lower"; }
+    XF86AudioMute        allow-when-locked=true { spawn "serpantinum" "volume" "mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "serpantinum" "volume" "mic-toggle"; }
+
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "serpantinum" "brightness" "raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "serpantinum" "brightness" "lower"; }
+
+    XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+    XF86AudioPause { spawn "playerctl" "play-pause"; }
+    XF86AudioNext  { spawn "playerctl" "next"; }
+    XF86AudioPrev  { spawn "playerctl" "previous"; }
+    Ctrl+Mod+Space { spawn "playerctl" "play-pause"; }
+    Mod+Alt+N      { spawn "playerctl" "next"; }
+    Mod+Alt+P      { spawn "playerctl" "previous"; }
+    Mod+Shift+M    { spawn "serpantinum" "volume" "mute-toggle"; }
+    Mod+Shift+P    { spawn "playerctl" "play-pause"; }
+    Mod+Shift+N    { spawn "playerctl" "next"; }
+    Mod+Shift+B    { spawn "playerctl" "previous"; }
+
+    F12 { switch-layout "next"; }
+}
+
+recent-windows {
+    binds {
+        Alt+Tab { next-window; }
+        Alt+Shift+Tab { previous-window; }
+    }
+}

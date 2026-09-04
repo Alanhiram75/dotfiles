@@ -1,9 +1,4 @@
-// ============================================================================
-// NIRI CONFIGURATION - Base for illogical-impulse (ii)
-// ============================================================================
-// Minimal base config - customize to your needs
-// Wiki: https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-// ============================================================================
+// NIRI CONFIGURATION - Serpantinum
 
 prefer-no-csd
 
@@ -11,28 +6,26 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// Honor activation tokens even with invalid serials — lets apps like VS Code,
-// Firefox, etc. steal focus when another app requests it (e.g. Nautilus open-with).
 debug {
     honor-xdg-activation-with-invalid-serial
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-include "config.d/10-input-and-cursor.kdl"
+include "config/env.kdl"
+include "config/input.kdl"
+include "config/output.kdl"
+include "config/layout.kdl"
+include "config/autostart.kdl"
+include "config/keybinds.kdl"
 
-include "config.d/20-layout-and-overview.kdl"
+// Window rules (de los dotfiles)
+window-rule {
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
 
-include "config.d/30-window-rules.kdl"
-
-include "config.d/40-environment.kdl"
-
-include "config.d/50-startup.kdl"
-
-include "config.d/60-animations.kdl"
-
-include "config.d/70-binds.kdl"
-
-include "config.d/80-layer-rules.kdl"
-
-include "config.d/90-user-extra.kdl"
+window-rule {
+    match is-active=false
+    opacity 0.9
+}

@@ -19,5 +19,5 @@ if test -d ~/.local/bin
     end
 end
 
-# Gruvbox LS_COLORS
-set -gx LS_COLORS 'di=00;38;5;243:ln=36:ex=32:pi=31:so=33:bd=33:cd=33:or=31:mi=31:su=37:sg=33:ca=33:tw=33:ow=33'
+# LS_COLORS dinámico (generado desde dircolors del sistema)
+set -gx LS_COLORS (dircolors -c 2>/dev/null | sed 's/^setenv LS_COLORS //;s/;$//')
