@@ -65,7 +65,7 @@ alias ss='systemctl suspend; and exit' # <-- Suspender el sistema y cerrar termi
 alias co='opencode'                                           # <-- Lanzar OpenCode CLI    
 alias pipve='python3 -m venv .venv'                           # <-- Crear entorno virtual de Python
 alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar PostgreSQL
-alias sp='serpantinum'                                        # <-- Lanzar Serpantinum
+
 alias debian="cd ~/programming/labs/debian-lab && ./start.sh && ./connect.sh"  # <-- Iniciar y conectar a Debian en Podman
 alias sql="cd ~/programming/labs/sqlserver-lab && ./start.sh"                  # <-- Iniciar SQL Server en Podman
 alias work='cd ~/programming/Workflow_Dashboard && ./start.sh && brave http://127.0.0.1:8000' # <-- Iniciar Workflow Dashboard y abrirlo en Brave

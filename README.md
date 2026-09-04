@@ -19,7 +19,7 @@ Focused on simplicity, speed and a clean terminal experience with dynamic colors
 | **Distro**         | CachyOS        |
 | **Display Server** | Wayland        |
 | **Compositor**     | Niri           |
-| **Shell**          | Serpantinum    |
+| **Shell**          | Clavis         |
 
 ---
 
@@ -27,7 +27,7 @@ Focused on simplicity, speed and a clean terminal experience with dynamic colors
 
 | Tool          | Description                              |
 | ------------- | ---------------------------------------- |
-| **Serpantinum**| Niri Wayland shell (quickshell)          |
+| **Clavis**    | Niri Wayland shell (quickshell)          |
 | **Kitty**     | GPU-accelerated terminal                 |
 | **Fish**      | Friendly interactive shell               |
 | **Starship**  | Fast and minimal prompt                  |
@@ -39,11 +39,12 @@ Focused on simplicity, speed and a clean terminal experience with dynamic colors
 
 ## 🎨 Dynamic Colors
 
-Colors are generated dynamically from the wallpaper via **matugen**. Changing the wallpaper automatically updates:
+Colors are generated dynamically from the wallpaper via **matugen** (pipeline de Clavis). Changing the wallpaper automatically updates:
 
-- **Kitty** terminal colors (`colors.conf`)
+- **Kitty** terminal colors (`themes/Matugen.conf` → `current-theme.conf`)
 - **Fastfetch** module colors (`config.jsonc`)
 - **Starship** prompt palette (`starship.toml`)
+- **Btop**, **Cava** y **Yazi** (otras apps del pipeline)
 
 ---
 
@@ -61,7 +62,7 @@ Colors are generated dynamically from the wallpaper via **matugen**. Changing th
 │   │   └── 30_aliases.fish      # eza, git, system aliases
 │   └── config.fish              # main fish config
 ├── kitty
-│   └── kitty.conf               # includes dynamic colors.conf
+│   └── kitty.conf               # includes matugen current-theme.conf
 ├── niri/
 │   ├── config.kdl               # niri main config
 │   └── config/

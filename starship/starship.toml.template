@@ -13,9 +13,9 @@ $cmd_duration
 
 add_newline = true
 
-palette = "serpantinum"
+palette = "clavis"
 
-[palettes.serpantinum]
+[palettes.clavis]
 arrow = "{{colors.tertiary.default.hex}}"
 os = "{{colors.primary.default.hex}}"
 os_admin = "{{colors.error.default.hex}}"

@@ -1,4 +1,4 @@
-// NIRI CONFIGURATION - Serpantinum
+// NIRI CONFIGURATION - Clavis
 
 prefer-no-csd
 
@@ -29,3 +29,7 @@ window-rule {
     match is-active=false
     opacity 0.9
 }
+
+// BEGIN CLAVIS CURSOR
+include optional=true "clavis/cursor.kdl"
+// END CLAVIS CURSOR
