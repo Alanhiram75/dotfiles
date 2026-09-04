@@ -33,6 +33,7 @@ binds {
     Super+B { spawn "brave"; }
     Super+Shift+C { spawn "brave" "--new-window" "https://calendar.google.com/calendar/u/0/r"; }
     Super+C { spawn "vscodium"; }
+    Super+S { spawn "signal-desktop"; }
 
     // ═══════════════════ Ventanas ═══════════════════
     Mod+Q repeat=false { close-window; }
