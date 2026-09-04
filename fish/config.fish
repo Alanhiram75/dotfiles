@@ -7,6 +7,11 @@ set fish_color_quote yellow
 set fish_color_redirection red
 set fish_color_end black
 
+# Autosuggestions legibles sobre fondo oscuro
+set fish_color_autosuggestion 8e9aa8
+set fish_color_cwd 45a3ff
+set fish_color_error ff6b6b
+
 # Java GUI fix (NetBeans, IntelliJ, etc)
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
