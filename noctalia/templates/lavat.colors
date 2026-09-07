@@ -1,0 +1,3 @@
+# Noctalia Lavat colors - generated, do not edit manually
+LAVAT_LAVA="{{colors.primary.default.hex}}"
+LAVAT_RIM="{{colors.tertiary.default.hex}}"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+source "$HOME/.config/lavat/noctalia.colors"
+exec lavat -g -G -c "${LAVAT_LAVA//#/}" -k "${LAVAT_RIM//#/}"

@@ -8,3 +8,7 @@ builtin_ids = [ "starship", "kitty" ]
 [theme.templates.user.fastfetch]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/fastfetch.jsonc"
 output_path = "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+
+[theme.templates.user.lavat]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/lavat.colors"
+output_path = "$XDG_CONFIG_HOME/lavat/noctalia.colors"
