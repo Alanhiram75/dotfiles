@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+# Toggle fullscreen para kitty: en fullscreen pasa a color solido de la
+# paleta noctalia; al salir restaura la transparencia (background_opacity).
+#
+# La rama (entrar/salir) se decide por el ESTADO REAL de fullscreen
+# (Window size == Logical size del output), no por un fichero: asi un
+# reload de kitty (p.ej. pkill -USR1 al cambiar wallpaper) que resetea
+# los colores en runtime no deja invertida la logica.
+set -euo pipefail
+
+OUT=$(niri msg focused-window 2>/dev/null || true)
+case "$OUT" in
+    *'App ID: "kitty"'*|*'AppID: "kitty"'*|*'app_id="kitty"'*)
+        ;;
+    *)
+        niri msg action fullscreen-window
+        exit 0
+        ;;
+esac
+
+pid=$(printf '%s\n' "$OUT" | sed -n 's/.*PID: *\([0-9][0-9]*\).*/\1/p' | head -1)
+
+RUN_DIR="${XDG_RUNTIME_DIR:-"/run/user/$(id -u)"}"
+BASE="$RUN_DIR/kitty.sock"
+
+# Descubre el socket de control de la instancia de kitty enfocada.
+# Con listen_on en kitty.conf, cada instancia escucha en kitty.sock-<pid>.
+find_socket() {
+    local f candidates=()
+    for f in "$BASE"-*; do
+        [[ -e "$f" ]] && candidates+=("$f")
+    done
+    if ((${#candidates[@]} == 1)); then
+        printf '%s\n' "${candidates[0]}"
+        return 0
+    fi
+    # Varias instancias: usa la que matchea con el pid (o su ancestro kitty)
+    local cur="$pid" ppid
+    while [[ -n "$cur" && "$cur" != 1 ]]; do
+        f="$BASE-$cur"
+        if [[ -e "$f" ]]; then
+            printf '%s\n' "$f"
+            return 0
+        fi
+        ppid=$(awk '{print $4}' "/proc/$cur/stat" 2>/dev/null || true)
+        [[ -z "$ppid" || "$ppid" == "$cur" ]] && break
+        cur="$ppid"
+    done
+    # Fallback: la instancia modificada mas recientemente
+    f=$(ls -t "$BASE"-* 2>/dev/null | head -1)
+    [[ -n "$f" && -e "$f" ]] && printf '%s\n' "$f" && return 0
+    return 1
+}
+
+sock=""
+if [[ -n "$pid" ]]; then
+    # Prioridad 1: variable de entorno heredada (si se ejecuta desde dentro de kitty)
+    sock=$(tr '\0' '\n' < "/proc/$pid/environ" 2>/dev/null \
+        | sed -n 's/^KITTY_LISTEN_ON=//p' | head -1)
+    [[ -n "$sock" ]] && sock="${sock#unix:}"
+    # Prioridad 2: fichero de socket kitty.sock-<pid>
+    if [[ -z "$sock" ]]; then
+        sock=$(find_socket || true)
+    fi
+fi
+
+STATE="${XDG_STATE_HOME:-"$HOME/.local/state"}/kitty-fullscreen-solid"
+
+# Color solido dinamico de la paleta noctalia (on_primary -> active_tab_foreground),
+# se regenera al cambiar el fondo de pantalla.
+THEME="${XDG_CONFIG_HOME:-"$HOME/.config"}/kitty/themes/noctalia.conf"
+SOLID_BG=$(sed -n 's/^active_tab_foreground[[:space:]]*\(#[0-9A-Fa-f][0-9A-Fa-f]\{5\}\)[[:space:]]*$/\1/p' "$THEME" 2>/dev/null | head -1)
+[[ -n "$SOLID_BG" ]] || SOLID_BG='#1b333e'
+
+# Opacidad de ventana a restaurar (la de kitty.conf)
+KITTY_CONF="${XDG_CONFIG_HOME:-"$HOME/.config"}/kitty/kitty.conf"
+OPACITY=$(sed -n 's/^background_opacity[[:space:]]*\([0-9.][0-9.]*\).*/\1/p' "$KITTY_CONF" 2>/dev/null | head -1)
+[[ -n "$OPACITY" ]] || OPACITY=0.4
+
+# Detecta si la ventana enfocada esta realmente en fullscreen:
+# su Window size coincide con el Logical size de algun output.
+is_fs=0
+w=$(printf '%s\n' "$OUT" | sed -n 's/.*Window size: *\([0-9][0-9]*\) *x *\([0-9][0-9]*\).*/\1/p' | head -1)
+h=$(printf '%s\n' "$OUT" | sed -n 's/.*Window size: *\([0-9][0-9]*\) *x *\([0-9][0-9]*\).*/\2/p' | head -1)
+if [[ -n "$w" && -n "$h" ]]; then
+    while read -r ow oh; do
+        if [[ "$ow" == "$w" && "$oh" == "$h" ]]; then
+            is_fs=1
+            break
+        fi
+    done < <(niri msg outputs 2>/dev/null | sed -n 's/Logical size: \([0-9][0-9]*\)x\([0-9][0-9]*\).*/\1 \2/p')
+else
+    # No se pudo medir: fallback al state file
+    [[ -f "$STATE" ]] && is_fs=1
+fi
+
+if [[ -n "$sock" ]]; then
+    if [[ "$is_fs" -eq 1 ]]; then
+        # Salir: primero abandona el fullscreen (aun con color solido) para no
+        # mostrar transparencia sobre el backdrop negro; despues se restaura.
+        niri msg action fullscreen-window
+        rm -f "$STATE"
+        kitten @ --to "unix:$sock" set-background-opacity --all "$OPACITY" || true
+        kitten @ --to "unix:$sock" set-colors --all --reset || true
+        exit 0
+    else
+        # Entrar: color primero, luego opacidad, y una pausa para que kitty
+        # pinte el solido antes del fullscreen (evita el flash negro).
+        touch "$STATE"
+        kitten @ --to "unix:$sock" set-colors --all "background=$SOLID_BG" || true
+        kitten @ --to "unix:$sock" set-background-opacity --all 1.0 || true
+        sleep 0.05
+        niri msg action fullscreen-window
+        exit 0
+    fi
+fi
+
+niri msg action fullscreen-window

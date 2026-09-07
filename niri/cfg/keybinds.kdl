@@ -40,7 +40,7 @@ binds {
     // ═══════════════════ Ventanas ═══════════════════
     Mod+Q repeat=false { close-window; }
     Mod+D { maximize-column; }
-    Mod+F { fullscreen-window; }
+    Mod+F { spawn "/home/hiram/.local/bin/kitty-fullscreen-toggle"; }
     Mod+A { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
