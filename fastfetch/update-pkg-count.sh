@@ -9,8 +9,4 @@ count_flatpak="$(flatpak list --app 2>/dev/null | wc -l || true)"
 
 printf '%s' "$count_repos" > "$cache_dir/pkg-count-pacman"
 printf '%s' "$count_aur" > "$cache_dir/pkg-count-aur"
-if [ "$count_flatpak" -gt 0 ]; then
-    printf '%s' "$count_flatpak" > "$cache_dir/pkg-count-flatpak"
-else
-    rm -f "$cache_dir/pkg-count-flatpak"
-fi
+printf '%s' "$count_flatpak" > "$cache_dir/pkg-count-flatpak"

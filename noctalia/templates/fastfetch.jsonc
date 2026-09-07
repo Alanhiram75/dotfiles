@@ -55,7 +55,7 @@
             "type": "command",
             "key": " ├ 󰏗 ",
             "keyColor": "{{colors.primary.default.hex}}",
-            "text": "f=\"\"; [ -f \"$HOME/.cache/pkg-count-flatpak\" ] && f=\", 󰏆 $(cat \"$HOME/.cache/pkg-count-flatpak\")\"; echo \"$(cat \"$HOME/.cache/pkg-count-pacman\"), 󰏓 $(cat \"$HOME/.cache/pkg-count-aur\")\"$f"
+            "text": "echo \"$(cat \"$HOME/.cache/pkg-count-pacman\") ➜ 󰏓 $(cat \"$HOME/.cache/pkg-count-aur\") ➜ 󰏆 $(cat \"$HOME/.cache/pkg-count-flatpak\")\""
         },
         {
             "type": "command",

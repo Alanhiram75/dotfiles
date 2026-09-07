@@ -4,15 +4,7 @@
     }
 
     window-rule {
-        match is-active=false
-        opacity 0.9
-    }
-
-    window-rule {
-        background-effect {
-          blur true
-          xray false
-        }
+        opacity 1.0
     }
 
     // Floating Noctalia settings window.
