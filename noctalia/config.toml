@@ -1,0 +1,10 @@
+[shell]
+polkit_agent = true
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = [ "starship", "kitty" ]
+
+[theme.templates.user.fastfetch]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/fastfetch.jsonc"
+output_path = "$XDG_CONFIG_HOME/fastfetch/config.jsonc"

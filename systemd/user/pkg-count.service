@@ -1,0 +1,9 @@
+[Unit]
+Description=Update sty package count cache for fastfetch
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/update-pkg-count.sh
+
+[Install]
+WantedBy=default.target

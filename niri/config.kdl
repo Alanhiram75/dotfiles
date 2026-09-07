@@ -1,35 +1,11 @@
-// NIRI CONFIGURATION - Clavis
+// NIRI CONFIGURATION - Noctalia (CachyOS)
+// Estructura: config.kdl + cfg/*.kdl
 
-prefer-no-csd
-
-hotkey-overlay {
-    skip-at-startup
-}
-
-debug {
-    honor-xdg-activation-with-invalid-serial
-}
-
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-include "config/env.kdl"
-include "config/input.kdl"
-include "config/output.kdl"
-include "config/layout.kdl"
-include "config/autostart.kdl"
-include "config/keybinds.kdl"
-
-// Window rules (de los dotfiles)
-window-rule {
-    geometry-corner-radius 16
-    clip-to-geometry true
-}
-
-window-rule {
-    match is-active=false
-    opacity 0.9
-}
-
-// BEGIN CLAVIS CURSOR
-include optional=true "clavis/cursor.kdl"
-// END CLAVIS CURSOR
+include "./cfg/animation.kdl"
+include "./cfg/autostart.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/input.kdl"
+include "./cfg/display.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/misc.kdl"

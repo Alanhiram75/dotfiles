@@ -1,31 +1,33 @@
-// NIRI KEYBINDS - Clavis
+// KEYBINDS MIGRADOS desde Clavis -> Noctalia (CachyOS)
 // "Mod" = Super. Cambios visibles tras recargar niri.
 
 binds {
 
     // ═══════════════════ Sesión & compositor ═══════════════════
     Mod+Tab repeat=false { toggle-overview; }
-    Mod+Shift+E { quit; }
+    Mod+Shift+E { spawn-sh "noctalia msg session logout"; } // era quit (Clavis)
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+O { power-off-monitors; }
 
-    // ═══════════════════ Clavis overlays / herramientas ═══════════════════
-    Super+G { spawn "key" "ipc" "call" "keystone" "hub"; }
-    Mod+Space repeat=false { spawn "key" "ipc" "call" "spotlight" "toggle"; } // era overview
-    Mod+V { spawn "key" "ipc" "call" "spotlight" "openMode" "clipboard"; }    // era clipboard
-    Mod+Alt+L allow-when-locked=true { spawn "key" "ipc" "call" "lock" "open"; } // era lock activate
-    Mod+Ctrl+Shift+L allow-when-locked=true { spawn "key" "ipc" "call" "lock" "open"; } // era lock focus
+    // ═══════════════════ Noctalia (reemplaza overlays Clavis) ═══════════════════
+    Mod+Space repeat=false { spawn-sh "noctalia msg panel-toggle launcher"; } // era spotlight (hub)
+    Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; } // era clipboard de spotlight
+    Mod+Alt+L allow-when-locked=true { spawn-sh "noctalia msg session lock"; } // era lock activate
+    Mod+Ctrl+Shift+L allow-when-locked=true { spawn-sh "noctalia msg session lock"; } // era lock focus
+    Mod+Shift+S { spawn-sh "noctalia msg screenshot-region"; } // era región screenshot (grim+slurp)
+    Ctrl+Alt+T { spawn-sh "noctalia msg panel-toggle wallpaper"; } // era wallpaper selector
+    Mod+Comma { spawn-sh "noctalia msg settings-toggle"; } // era settings
 
-    Mod+Shift+S { spawn "bash" "-c" "grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png\""; } // era región screenshot
-    // Mod+Shift+X { ... }  // iba a OCR -> no hay en Clavis (comentado)
-    // Mod+Shift+A { ... }  // iba a search -> use spotlight (comentado)
-    // Ctrl+Shift+S { ... } // iba a snip menu -> no hay (comentado)
+    // ═══════════════════ Noctalia extra (paneles/acciones) ═══════════════════
+    Mod+G   { spawn-sh "noctalia msg panel-toggle control-center"; } // hub
+    Mod+Shift+Q { spawn-sh "noctalia msg panel-toggle session"; }    // menú sesión (power/logout/reboot)
+    Mod+Shift+D { spawn-sh "noctalia msg dock-toggle"; }             // dock
+    Mod+Shift+W { spawn-sh "noctalia msg wallpaper-next"; }          // fondo siguiente
+    Mod+Shift+Y { spawn-sh "noctalia msg theme-mode-toggle"; }       // tema claro/oscuro
+    Mod+Ctrl+C  { spawn-sh "noctalia msg caffeine-toggle"; }         // modo café
+    Mod+Ctrl+T  { spawn-sh "noctalia msg panel-toggle tray-drawer"; } // bandeja del sistema
 
-    Ctrl+Alt+T { spawn "key" "ipc" "call" "spotlight" "openMode" "wallpapers"; } // era wallpaper selector
-    Mod+Comma { spawn "key" "ipc" "call" "control-center" "toggle" ""; }        // era settings
-    // Mod+Shift+W { ... } // iba a panel family cycle -> no existe (comentado)
-
-    // ═══════════════════ App launchers ═══════════════════
+    // ═══════════════════ App launchers (apps instaladas) ═══════════════════
     Mod+T { spawn "kitty"; }
     Mod+Return repeat=false { spawn "kitty"; }
     Super+E { spawn "nautilus"; }
@@ -44,7 +46,6 @@ binds {
 
     // ═══════════════════ Columnas ═══════════════════
     Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { spawn "bash" "-c" "if key record status --json 2>/dev/null | grep -q '\"state\": *\"recording\"'; then key record stop --clipboard 2>/dev/null; else key record start --target region --type video --audio system 2>/dev/null; fi"; } // era recordWithSound
     Mod+Ctrl+R { reset-window-height; }
     Mod+C { center-column; }
     Mod+Minus { set-column-width "-10%"; }
@@ -125,27 +126,28 @@ binds {
     Print      { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print  { screenshot-window; }
+    // Mod+Shift+S -> noctalia screenshot-region (arriba)
 
-    // ═══════════════════ Hardware / multimedia ═══════════════════
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
-    XF86AudioMute        allow-when-locked=true { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "pactl" "set-source-mute" "@DEFAULT_SOURCE@" "toggle"; }
+    // ═══════════════════ Hardware / multimedia (Noctalia) ═══════════════════
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
 
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
-    XF86AudioPlay  { spawn "playerctl" "play-pause"; }
-    XF86AudioPause { spawn "playerctl" "play-pause"; }
-    XF86AudioNext  { spawn "playerctl" "next"; }
-    XF86AudioPrev  { spawn "playerctl" "previous"; }
-    Ctrl+Mod+Space { spawn "playerctl" "play-pause"; }
-    Mod+Alt+N      { spawn "playerctl" "next"; }
-    Mod+Alt+P      { spawn "playerctl" "previous"; }
-    Mod+Shift+M    { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
-    Mod+Shift+P    { spawn "playerctl" "play-pause"; }
-    Mod+Shift+N    { spawn "playerctl" "next"; }
-    Mod+Shift+B    { spawn "playerctl" "previous"; }
+    XF86AudioPlay  { spawn-sh "noctalia msg media play"; }
+    XF86AudioPause { spawn-sh "noctalia msg media play"; }
+    XF86AudioNext  { spawn-sh "noctalia msg media next"; }
+    XF86AudioPrev  { spawn-sh "noctalia msg media previous"; }
+    Ctrl+Mod+Space { spawn-sh "noctalia msg media play"; } // era play-pause
+    Mod+Alt+N      { spawn-sh "noctalia msg media next"; }
+    Mod+Alt+P      { spawn-sh "noctalia msg media previous"; }
+    Mod+Shift+M    { spawn-sh "noctalia msg volume-mute"; } // era mute pactl
+    Mod+Shift+P    { spawn-sh "noctalia msg media play"; }
+    Mod+Shift+N    { spawn-sh "noctalia msg media next"; }
+    Mod+Shift+B    { spawn-sh "noctalia msg media previous"; }
 
     F12 { switch-layout "next"; }
 }
