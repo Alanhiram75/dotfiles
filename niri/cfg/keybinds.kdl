@@ -30,7 +30,7 @@ binds {
     // ═══════════════════ App launchers (apps instaladas) ═══════════════════
     Mod+T { spawn "kitty"; }
     Mod+Return repeat=false { spawn "kitty"; }
-    Super+E { spawn "nautilus"; }
+    Super+E { spawn-sh "kitty -e yazi ~"; }
     Super+O { spawn "obsidian"; }
     Super+B { spawn "brave"; }
     Super+Shift+C { spawn "brave" "--new-window" "https://calendar.google.com/calendar/u/0/r"; }
