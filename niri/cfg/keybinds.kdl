@@ -5,7 +5,7 @@ binds {
 
     // ═══════════════════ Sesión & compositor ═══════════════════
     Mod+Tab repeat=false { toggle-overview; }
-    Mod+Shift+E { spawn-sh "noctalia msg session logout"; } // era quit (Clavis)
+    Mod+Shift+A { spawn-sh "noctalia msg session logout"; } // era quit (Clavis)
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+O { power-off-monitors; }
 
@@ -30,7 +30,8 @@ binds {
     // ═══════════════════ App launchers (apps instaladas) ═══════════════════
     Mod+T { spawn "kitty"; }
     Mod+Return repeat=false { spawn "kitty"; }
-    Super+E { spawn-sh "kitty -e yazi ~"; }
+    Super+E { spawn "nautilus"; }
+    Super+Shift+E { spawn-sh "kitty -e yazi ~"; }
     Super+O { spawn "obsidian"; }
     Super+B { spawn "brave"; }
     Super+Shift+C { spawn "brave" "--new-window" "https://calendar.google.com/calendar/u/0/r"; }
