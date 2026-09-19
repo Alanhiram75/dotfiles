@@ -35,6 +35,7 @@ binds {
     Super+O { spawn "obsidian"; }
     Super+B { spawn "brave"; }
     Super+Shift+C { spawn "brave" "--new-window" "https://calendar.google.com/calendar/u/0/r"; }
+    Super+Shift+F { spawn-sh "hyprpicker -a -f hex"; } // picker de color -> portapapeles
     Super+C { spawn "vscodium"; }
     Super+S { spawn "signal-desktop"; }
 
