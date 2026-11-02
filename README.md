@@ -23,6 +23,15 @@ Focused on simplicity, speed and a clean terminal experience with dynamic colors
 
 ---
 
+## 🖐️ Hardware
+
+| Componente | Configuración |
+| ---------- | ------------- |
+| **Teclado** | US + variante `altgr-intl` (ñ y acentos con AltGr) |
+| **Huella**  | Synaptics `06cb:009a` con `python-validity` → [`fingerprint/`](fingerprint/) |
+
+---
+
 ## ⚙️ Core Tools
 
 | Tool          | Description                              |
@@ -54,6 +63,9 @@ Colors are generated dynamically from the wallpaper via **matugen** (pipeline de
 .
 ├── fastfetch
 │   └── config.jsonc.template    # matugen template
+├── fingerprint
+│   ├── README.md                # lector Synaptics 06cb:009a + PAM
+│   └── setup.sh                 # activa la huella en SDDM
 ├── fish
 │   ├── conf.d/
 │   │   ├── 00_env.fish          # env, PATH, LS_COLORS
