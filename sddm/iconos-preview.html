@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Iconos Nerd Font - SDDM</title>
+<style>
+  :root { color-scheme: dark; }
+  body { background:#121314; color:#e3e2e3; font-family: system-ui, sans-serif; margin: 28px; }
+  h1 { color:#b1cad8; font-size: 22px; margin-bottom: 4px; }
+  p.note { color:#9aa0a6; font-size: 13px; margin-top: 0; }
+  a { color:#b1cad8; }
+  h2 { color:#b1cad8; font-size: 16px; margin-top: 28px; border-bottom:1px solid #2a2b2b; padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap:12px; margin-top:12px; }
+  .card { display:flex; flex-direction:column; align-items:center; gap:4px; padding:14px 8px;
+           background:#1f2020; color:#e3e2e3; border:1px solid #2f3030; border-radius:12px; cursor:pointer; }
+  .card:hover { border-color:#b1cad8; background:#292a2b; }
+  .glyph { font-family:"JetBrainsMono Nerd Font","JetBrainsMono NF",monospace; font-size:44px; line-height:1.1; color:#b1cad8; }
+  .name { font-size:12px; color:#e3e2e3; text-align:center; }
+  .cp { font-size:11px; color:#8d9196; }
+  .esc { font-family:monospace; font-size:11px; color:#ffb4ab; }
+  #toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#b1cad8; color:#121314;
+            padding:8px 16px; border-radius:8px; font-size:13px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  #toast.show { opacity:1; }
+</style></head><body>
+<h1>Iconos para la contraseña de SDDM</h1>
+<p class="note">Haz clic en un icono para copiar su carácter. Fuente: JetBrainsMono Nerd Font.</p>
+<h2>Seguridad</h2><div class="grid"><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F023" data-esc="\uF023">
+      <span class="glyph"></span>
+      <span class="name">fa-lock</span>
+      <span class="cp">U+F023</span>
+      <span class="esc">\uF023</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F09C" data-esc="\uF09C">
+      <span class="glyph"></span>
+      <span class="name">fa-unlock</span>
+      <span class="cp">U+F09C</span>
+      <span class="esc">\uF09C</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F13E" data-esc="\uF13E">
+      <span class="glyph"></span>
+      <span class="name">fa-unlock_alt</span>
+      <span class="cp">U+F13E</span>
+      <span class="esc">\uF13E</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F084" data-esc="\uF084">
+      <span class="glyph"></span>
+      <span class="name">fa-key</span>
+      <span class="cp">U+F084</span>
+      <span class="esc">\uF084</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F132" data-esc="\uF132">
+      <span class="glyph"></span>
+      <span class="name">fa-shield</span>
+      <span class="cp">U+F132</span>
+      <span class="esc">\uF132</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F06E" data-esc="\uF06E">
+      <span class="glyph"></span>
+      <span class="name">fa-eye</span>
+      <span class="cp">U+F06E</span>
+      <span class="esc">\uF06E</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F070" data-esc="\uF070">
+      <span class="glyph"></span>
+      <span class="name">fa-eye_slash</span>
+      <span class="cp">U+F070</span>
+      <span class="esc">\uF070</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F21B" data-esc="\uF21B">
+      <span class="glyph"></span>
+      <span class="name">fa-user_secret</span>
+      <span class="cp">U+F21B</span>
+      <span class="esc">\uF21B</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EE40" data-esc="\uEE40">
+      <span class="glyph"></span>
+      <span class="name">fa-fingerprint</span>
+      <span class="cp">U+EE40</span>
+      <span class="esc">\uEE40</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EA75" data-esc="\uEA75">
+      <span class="glyph"></span>
+      <span class="name">cod-lock</span>
+      <span class="cp">U+EA75</span>
+      <span class="esc">\uEA75</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EB53" data-esc="\uEB53">
+      <span class="glyph"></span>
+      <span class="name">cod-shield</span>
+      <span class="cp">U+EB53</span>
+      <span class="esc">\uEB53</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰌾" data-cp="U+F033E" data-esc="pegar carácter">
+      <span class="glyph">󰌾</span>
+      <span class="name">md-lock</span>
+      <span class="cp">U+F033E</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰍁" data-cp="U+F0341" data-esc="pegar carácter">
+      <span class="glyph">󰍁</span>
+      <span class="name">md-lock_outline</span>
+      <span class="cp">U+F0341</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󱎚" data-cp="U+F139A" data-esc="pegar carácter">
+      <span class="glyph">󱎚</span>
+      <span class="name">md-lock_check</span>
+      <span class="cp">U+F139A</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰌆" data-cp="U+F0306" data-esc="pegar carácter">
+      <span class="glyph">󰌆</span>
+      <span class="name">md-key</span>
+      <span class="cp">U+F0306</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰌋" data-cp="U+F030B" data-esc="pegar carácter">
+      <span class="glyph">󰌋</span>
+      <span class="name">md-key_variant</span>
+      <span class="cp">U+F030B</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰦝" data-cp="U+F099D" data-esc="pegar carácter">
+      <span class="glyph">󰦝</span>
+      <span class="name">md-shield_lock</span>
+      <span class="cp">U+F099D</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󱄻" data-cp="U+F113B" data-esc="pegar carácter">
+      <span class="glyph">󱄻</span>
+      <span class="name">md-shield_star</span>
+      <span class="cp">U+F113B</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰗹" data-cp="U+F05F9" data-esc="pegar carácter">
+      <span class="glyph">󰗹</span>
+      <span class="name">md-incognito</span>
+      <span class="cp">U+F05F9</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰈷" data-cp="U+F0237" data-esc="pegar carácter">
+      <span class="glyph">󰈷</span>
+      <span class="name">md-fingerprint</span>
+      <span class="cp">U+F0237</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰈈" data-cp="U+F0208" data-esc="pegar carácter">
+      <span class="glyph">󰈈</span>
+      <span class="name">md-eye</span>
+      <span class="cp">U+F0208</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰈉" data-cp="U+F0209" data-esc="pegar carácter">
+      <span class="glyph">󰈉</span>
+      <span class="name">md-eye_off</span>
+      <span class="cp">U+F0209</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󱢾" data-cp="U+F18BE" data-esc="pegar carácter">
+      <span class="glyph">󱢾</span>
+      <span class="name">md-shield_sword</span>
+      <span class="cp">U+F18BE</span>
+      <span class="esc">pegar carácter</span>
+    </button></div><h2>Divertidos / Pokémon</h2><div class="grid"><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F005" data-esc="\uF005">
+      <span class="glyph"></span>
+      <span class="name">fa-star</span>
+      <span class="cp">U+F005</span>
+      <span class="esc">\uF005</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F004" data-esc="\uF004">
+      <span class="glyph"></span>
+      <span class="name">fa-heart</span>
+      <span class="cp">U+F004</span>
+      <span class="esc">\uF004</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F0E7" data-esc="\uF0E7">
+      <span class="glyph"></span>
+      <span class="name">fa-bolt</span>
+      <span class="cp">U+F0E7</span>
+      <span class="esc">\uF0E7</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EEFE" data-esc="\uEEFE">
+      <span class="glyph"></span>
+      <span class="name">fa-ghost</span>
+      <span class="cp">U+EEFE</span>
+      <span class="esc">\uEEFE</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EE15" data-esc="\uEE15">
+      <span class="glyph"></span>
+      <span class="name">fa-skull</span>
+      <span class="cp">U+EE15</span>
+      <span class="esc">\uEE15</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EE0D" data-esc="\uEE0D">
+      <span class="glyph"></span>
+      <span class="name">fa-robot</span>
+      <span class="cp">U+EE0D</span>
+      <span class="esc">\uEE0D</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F29F" data-esc="\uF29F">
+      <span class="glyph"></span>
+      <span class="name">fa-diamond</span>
+      <span class="cp">U+F29F</span>
+      <span class="esc">\uF29F</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EDEB" data-esc="\uEDEB">
+      <span class="glyph"></span>
+      <span class="name">fa-crown</span>
+      <span class="cp">U+EDEB</span>
+      <span class="esc">\uEDEB</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+ED63" data-esc="\uED63">
+      <span class="glyph"></span>
+      <span class="name">fa-chess_knight</span>
+      <span class="cp">U+ED63</span>
+      <span class="esc">\uED63</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EEED" data-esc="\uEEED">
+      <span class="glyph"></span>
+      <span class="name">fa-cat</span>
+      <span class="cp">U+EEED</span>
+      <span class="esc">\uEEED</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EEF8" data-esc="\uEEF8">
+      <span class="glyph"></span>
+      <span class="name">fa-dragon</span>
+      <span class="cp">U+EEF8</span>
+      <span class="esc">\uEEF8</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F1B0" data-esc="\uF1B0">
+      <span class="glyph"></span>
+      <span class="name">fa-paw</span>
+      <span class="cp">U+F1B0</span>
+      <span class="esc">\uF1B0</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F219" data-esc="\uF219">
+      <span class="glyph"></span>
+      <span class="name">fa-gem</span>
+      <span class="cp">U+F219</span>
+      <span class="esc">\uF219</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F188" data-esc="\uF188">
+      <span class="glyph"></span>
+      <span class="name">fa-bug</span>
+      <span class="cp">U+F188</span>
+      <span class="esc">\uF188</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F490" data-esc="\uF490">
+      <span class="glyph"></span>
+      <span class="name">oct-flame</span>
+      <span class="cp">U+F490</span>
+      <span class="esc">\uF490</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EAF2" data-esc="\uEAF2">
+      <span class="glyph"></span>
+      <span class="name">cod-flame</span>
+      <span class="cp">U+EAF2</span>
+      <span class="esc">\uEAF2</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰓎" data-cp="U+F04CE" data-esc="pegar carácter">
+      <span class="glyph">󰓎</span>
+      <span class="name">md-star</span>
+      <span class="cp">U+F04CE</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰫢" data-cp="U+F0AE2" data-esc="pegar carácter">
+      <span class="glyph">󰫢</span>
+      <span class="name">md-star_four_points</span>
+      <span class="cp">U+F0AE2</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰄛" data-cp="U+F011B" data-esc="pegar carácter">
+      <span class="glyph">󰄛</span>
+      <span class="name">md-cat</span>
+      <span class="cp">U+F011B</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰚩" data-cp="U+F06A9" data-esc="pegar carácter">
+      <span class="glyph">󰚩</span>
+      <span class="name">md-robot</span>
+      <span class="cp">U+F06A9</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰮊" data-cp="U+F0B8A" data-esc="pegar carácter">
+      <span class="glyph">󰮊</span>
+      <span class="name">md-diamond</span>
+      <span class="cp">U+F0B8A</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰆥" data-cp="U+F01A5" data-esc="pegar carácter">
+      <span class="glyph">󰆥</span>
+      <span class="name">md-crown</span>
+      <span class="cp">U+F01A5</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰊠" data-cp="U+F02A0" data-esc="pegar carácter">
+      <span class="glyph">󰊠</span>
+      <span class="name">md-ghost</span>
+      <span class="cp">U+F02A0</span>
+      <span class="esc">pegar carácter</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="󰚌" data-cp="U+F068C" data-esc="pegar carácter">
+      <span class="glyph">󰚌</span>
+      <span class="name">md-skull</span>
+      <span class="cp">U+F068C</span>
+      <span class="esc">pegar carácter</span>
+    </button></div><h2>Tecnología</h2><div class="grid"><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F120" data-esc="\uF120">
+      <span class="glyph"></span>
+      <span class="name">fa-terminal</span>
+      <span class="cp">U+F120</span>
+      <span class="esc">\uF120</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+F121" data-esc="\uF121">
+      <span class="glyph"></span>
+      <span class="name">fa-code</span>
+      <span class="cp">U+F121</span>
+      <span class="esc">\uF121</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EA85" data-esc="\uEA85">
+      <span class="glyph"></span>
+      <span class="name">cod-terminal</span>
+      <span class="cp">U+EA85</span>
+      <span class="esc">\uEA85</span>
+    </button><button class="card" onclick="copyChar(this)" data-ch="" data-cp="U+EAC4" data-esc="\uEAC4">
+      <span class="glyph"></span>
+      <span class="name">cod-code</span>
+      <span class="cp">U+EAC4</span>
+      <span class="esc">\uEAC4</span>
+    </button></div>
+<div id="toast"></div>
+<script>
+function copyChar(el) {
+  const ch = el.dataset.ch;
+  const cp = el.dataset.cp;
+  const esc = el.dataset.esc;
+  navigator.clipboard.writeText(ch).then(() => {
+    const t = document.getElementById('toast');
+    t.textContent = 'Copiado ' + cp + (esc === 'pegar carácter' ? '' : '  (' + esc + ')');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1400);
+  });
+}
+</script>
+</body></html>

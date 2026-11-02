@@ -551,12 +551,12 @@ Rectangle {
                             anchors.fill: parent
                             anchors.leftMargin: 20 * s
                             anchors.rightMargin: 20 * s
-                            font.family: root.sansFont
+                            font.family: "JetBrainsMono Nerd Font"
                             font.pixelSize: 18 * s
                             font.letterSpacing: 6 * s
                             color: "#1d3c34"
                             echoMode: TextInput.Password
-                            passwordCharacter: "•"
+                            passwordCharacter: "\uED63"
                             horizontalAlignment: TextInput.AlignHCenter
                             verticalAlignment: TextInput.AlignVCenter
                             clip: true
