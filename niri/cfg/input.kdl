@@ -4,7 +4,8 @@
 input {
     keyboard {
         xkb {
-            layout "latam,us"
+            layout "us"
+            variant "altgr-intl"
         }
         numlock
         repeat-delay 250
