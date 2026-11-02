@@ -1,0 +1,102 @@
+palette = "noctalia"
+format = """\
+[╭╴](fg:teal)\
+$username\
+$directory\
+$time\
+(\
+    $git_branch\
+    $git_status\
+)\
+$cmd_duration
+[╰─](fg:teal)$character\
+"""
+
+add_newline = true
+
+[username]
+style_user = 'fg:text bg:surface1'
+style_root = 'red'
+format = '[](fg:surface1)[  Hiram]($style)[](fg:surface1)'
+disabled = false
+show_always = true
+
+[character]
+success_symbol = "[󰍟](fg:teal)"
+error_symbol = "[󰍟](fg:red)"
+
+[directory]
+format = " [](fg:surface1)[  $path ]($style)[$read_only]($read_only_style)[](fg:surface1)"
+truncation_length = 3
+style = "fg:text bg:surface1"
+read_only_style = "fg:text bg:surface1"
+before_repo_root_style = "fg:text bg:surface1"
+truncation_symbol = "…/"
+truncate_to_repo = true
+read_only ="  "
+
+[directory.substitutions]
+"Escritorio" = "  "
+"Documentos" = "  "
+"Descargas" = "  "
+"Música" = " 󰎈"
+"Imágenes" = "  "
+"Vídeos" = "  "
+"Proyectos" = " 󰊤 "
+
+[time]
+disabled = false
+format = " [](fg:surface1)[ $time]($style)[](fg:surface1)"
+time_format = "%H:%M"
+style = "fg:text bg:surface1"
+
+[cmd_duration]
+format = " [](fg:surface1)[ $duration]($style)[](fg:surface1)"
+style = "fg:text bg:surface1"
+min_time = 500
+
+[git_branch]
+format = " [](fg:surface1)[$symbol$branch](fg:text bg:surface1)[](fg:surface1)"
+symbol = " "
+
+[git_status]
+format = '([ ](fg:surface1)[ $modified$new$deleted$renamed$untracked$ahead_behind ]($style)[](fg:surface1))'
+style = "fg:text bg:surface1"
+modified = "✘"
+
+[package]
+disabled = true
+
+# Paleta generada por Noctalia a partir del wallpaper
+[palettes.noctalia]
+teal = "{{colors.primary.default.hex}}"
+text = "{{colors.on_surface.default.hex}}"
+surface1 = "{{colors.on_primary.default.hex}}"
+red = "{{colors.error.default.hex}}"
+
+# [nodejs]
+# format = "[ ](fg:teal)[$symbol$version]($style)[](fg:teal)"
+# style = "bg:surface1 fg:text"
+# symbol = " "
+# version_format = "${raw}"
+# disabled=false
+
+# [rust]
+# format = "[ ](fg:teal)[$symbol$version](bg:surface1 fg:text)[](fg:teal)"
+# symbol = " "
+# version_format = "${raw}"
+# disabled=false
+
+# [bun]
+# disabled=false
+# format = "[ ](fg:teal)[$symbol$version](bg:surface1 fg:text)[](fg:teal)"
+# symbol = " "
+# version_format = "${raw}"
+
+# [python]
+# disabled=false
+# format = '[ ](fg:teal)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)[](fg:teal)'
+# symbol = " "
+# version_format = "${raw}"
+# style = "fg:text bg:surface1"
+

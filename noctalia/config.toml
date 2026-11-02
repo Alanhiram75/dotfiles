@@ -3,7 +3,10 @@ polkit_agent = true
 
 [theme.templates]
 enable_builtin_templates = true
-builtin_ids = [ "starship", "kitty" ]
+builtin_ids = [ "kitty", "helix", "niri" ]
+
+enable_community_templates = true
+community_ids = [ "opencode", "yazi" ]
 
 [theme.templates.user.fastfetch]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/fastfetch.jsonc"
@@ -12,3 +15,7 @@ output_path = "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 [theme.templates.user.lavat]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/lavat.colors"
 output_path = "$XDG_CONFIG_HOME/lavat/noctalia.colors"
+
+[theme.templates.user.starship]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/starship.toml"
+output_path = "$XDG_CONFIG_HOME/starship.toml"

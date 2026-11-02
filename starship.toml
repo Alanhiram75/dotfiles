@@ -67,6 +67,13 @@ modified = "✘"
 [package]
 disabled = true
 
+# Paleta usada por el prompt (colores actuales de Noctalia)
+[palettes.noctalia]
+teal = "#b1cad8"
+text = "#e3e2e3"
+surface1 = "#1b333e"
+red = "#ffb4ab"
+
 # [nodejs]
 # format = "[ ](fg:teal)[$symbol$version]($style)[](fg:teal)"
 # style = "bg:surface1 fg:text"
