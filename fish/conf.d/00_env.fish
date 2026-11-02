@@ -21,3 +21,8 @@ end
 
 # LS_COLORS dinámico (generado desde dircolors del sistema)
 set -gx LS_COLORS (dircolors -c 2>/dev/null | sed 's/^setenv LS_COLORS //;s/;$//')
+
+# ssh-agent por systemd (socket en $XDG_RUNTIME_DIR) para claves con passphrase
+if not set -q SSH_AUTH_SOCK
+    set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+end
