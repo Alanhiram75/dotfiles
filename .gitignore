@@ -1,0 +1,6 @@
+# Python
+__pycache__/
+*.pyc
+
+# Symlinks generados por `systemctl --user enable`
+systemd/user/*.target.wants/
