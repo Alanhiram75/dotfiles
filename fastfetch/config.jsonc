@@ -21,45 +21,45 @@
         "break",
         {
             "type": "os",
-            "key": "Hp",
+            "key": "󰌢 ",
             "keyColor": "#b1cad8",
             "outputColor": "#e3e2e3"
         },
         {
             "type": "kernel",
-            "key": " ├ 󰌽 ",
+            "key": "├ 󰌽 ",
             "keyColor": "#b1cad8"
         },
 
         {
             "type": "shell",
-            "key": " ├ 󰞷 ",
+            "key": "├ 󰞷 ",
             "keyColor": "#b1cad8"
         },
         {
             "type": "wm",
-            "key": " ├ 󱂬 ",
+            "key": "├ 󱂬 ",
             "keyColor": "#b1cad8"
         },
         {
             "type": "terminal",
-            "key": " ├ 󰄛 ",
+            "key": "├ 󰄛 ",
             "keyColor": "#b1cad8"
         },
         {
             "type": "memory",
-            "key": " ├ 󰍛 ",
+            "key": "├ 󰍛 ",
             "keyColor": "#b1cad8"
         },
         {
             "type": "command",
-            "key": " ├ 󰏗 ",
+            "key": "├ 󰏗 ",
             "keyColor": "#b1cad8",
             "text": "echo \"$(cat \"$HOME/.cache/pkg-count-pacman\") ➜ 󰏓 $(cat \"$HOME/.cache/pkg-count-aur\") ➜ 󰏆 $(cat \"$HOME/.cache/pkg-count-flatpak\")\""
         },
         {
             "type": "command",
-            "key": " └ 󰅐 ",
+            "key": "└ 󰅐 ",
             "keyColor": "#b1cad8",
             "text": "echo $(( ($(date +%s) - $(date -d '2026-02-15' +%s)) / 86400 )) days"
         },
