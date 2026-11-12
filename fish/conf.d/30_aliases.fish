@@ -1,33 +1,26 @@
-#                              ---> ALIAS <---
+# Aliases
 #
 # Atajos para comandos largos o de uso frecuente.
 
-# =============================================
-# 1.           LISTADOS (EZA)
-# =============================================
+# Listados (EZA)
 # Aliases/shortcuts para reemplazar 'ls' con 'eza'
 alias ls='eza -1 --group-directories-first --icons=always --color=always --no-user --no-permissions --no-time --no-filesize | sed "s/^/ - /"' # <-- Listado estándar con eza
 alias la='eza --classify=auto --color=always --group-directories-first --sort=extension -A --icons' # <-- Listado con iconos y ocultos
 alias lt='eza --tree --level=5 --group-directories-first --icons --no-user --no-permissions --no-time --no-filesize'
 alias l\.="eza -a | grep -e '^\.'"                                                                  # <-- Solo archivos/dirs ocultos 
 
-# =============================================
-# 2.          SISTEMA Y PAQUETES
-# =============================================
+# Sistema y paquetes
 # Aliases/shortcuts para tareas comunes del sistema
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg" # <-- Regenerar configuración de GRUB
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"         # <-- Eliminar bloqueo de pacman
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'          # <-- Limpiar dependencias huérfanas
 alias jctl="journalctl -p 3 -xb"                         # <-- Ver logs importantes del sistema
-alias update='paru'                     # <-- Actualizar todos los paquetes
+alias update='paru'                                      # <-- Actualizar todos los paquetes
 alias sound="pavucontrol"                               # <-- Configuración de sonido
 alias syu='sudo pacman -Syyu'                            # <-- Actualizar el sistema con pacman
-alias mirrors='sudo reflector --latest 30 --protocol https --sort rate --save /etc/pacman.d/mirrorlist' # ↴
-# ↳ Selecciona los 30 servidores https más actualizados, organizados por velocidad de descarga, reescribe en pacman.d/mirrorlist ↲
+alias mirrors='sudo reflector --latest 30 --protocol https --sort rate --save /etc/pacman.d/mirrorlist' # Actualiza y ordena los 30 mirrors HTTPS más recientes
 
-# =============================================
-# 3.                NAVEGACIÓN
-# =============================================
+# Navegación
 # Aliases/shortcuts para moverse entre directorios
 alias ..='cd ..'                 # <-- Subir un directorio
 alias ...='cd ../..'             # <-- Subir dos directorios
@@ -39,9 +32,7 @@ alias cda='nextd'                # <-- Ir al siguiente directorio en el stack
 alias cls='clear'                # <-- Limpiar pantalla
 alias sa='exit'                  # <-- Salir de la shell
 
-# =============================================
-# 4.                 ARCHIVOS
-# =============================================
+# Archivos
 # Comandos para manipulación de archivos
 alias untar='tar -xf'      # <-- Descomprimir un archivo .tar, sin eliminar el .tar original
 alias tarnow='tar -acvf '  # <-- Crear un archivo .tar usando comprensión automática
@@ -51,9 +42,7 @@ alias wget='wget -c '      # <-- Continuar descargas interrumpidas automáticame
 alias zipnow='7z a '       # <-- Crear un archivo .7z usando 7zip
 alias unzip='7z x'         # <-- Descomprimir .zip usando la heramienta de 7zip
 
-# =============================================
-# 5.     HERRAMIENTAS Y ACCESOS DIRECTOS
-# =============================================
+# Herramientas y accesos directos
 # Accesos rápidos a herramientas externas
 alias icat='kitten icat' # <-- Visor rápida y nativo de imágenes usando la terminal de Kitty
 alias tub='pipes-rs'     # <-- Generación fantástica y atractiva de tuberías (usando Pipes-RS) en la terminal
@@ -69,9 +58,7 @@ alias postgrestart='sudo systemctl start postgresql.service'  # <-- Inicializar 
 alias debian="cd ~/programming/labs/debian-lab && ./start.sh && ./connect.sh"  # <-- Iniciar y conectar a Debian en Podman
 alias sql="cd ~/programming/labs/sqlserver-lab && ./start.sh"                  # <-- Iniciar SQL Server en Podman
 alias work='cd ~/programming/Workflow_Dashboard && ./start.sh && brave http://127.0.0.1:8000' # <-- Iniciar Workflow Dashboard y abrirlo en Brave
-# =============================================
-# 6.      INFORMACIÓN DEL SISTEMA
-# =============================================
+# Información del sistema
 # Aliases/shortcuts para inspección del sistema
 alias psmem='ps auxf | sort -nr -k 4'                                         # <-- Procesos ordenados por RAM
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'                            # <-- Top 10 por RAM
@@ -82,9 +69,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" # 
 alias fsh='fastfetch'                                                         # <-- Información rápida del sistema
 alias bigr='sudo du -h --max-depth=1 / | sort -hr'                            # <-- Uso de disco en /
 
-# =============================================
-# 7.         RED Y TEXTO
-# =============================================
+# Red y texto
 # Aliases/shortcuts para utilidades de texto y red
 alias dir='dir --color=auto'     # <-- Listado con color
 alias vdir='vdir --color=auto'   # <-- Listado detallado con color
@@ -93,9 +78,7 @@ alias fgrep='fgrep --color=auto' # <-- Búsqueda fija con color
 alias egrep='egrep --color=auto' # <-- Búsqueda extendida con color
 alias tb='nc termbin.com 9999'   # <-- Enviar texto a termbin
 
-# =============================================
-# 8.                 GIT
-# =============================================
+# Git
 # Aliases/shortcuts para un workflow más fluido usando git 
 alias gi='git init'               # <-- Inicializar un nuevo repositorio Git
 alias gs='git status'             # <-- Ver el estado del repositorio
@@ -111,9 +94,7 @@ alias gpl='git pull'              # <-- Pull del repositorio remoto
 alias goc='git pull --rebase origin main'  # <-- Organiza los commits
 alias gsync='git fetch origin; git reset --hard origin/main'  # <-- Sincroniza repo local con origin/main (borra cambios locales)
 
-# =============================================
-# 9.              PUERTOS (UFW)
-# =============================================
+# Puertos (UFW)
 # Gestión rápida de puertos en ufw: p open "puerto", p close "puerto", p list
 function p
     switch "$argv[1]"
