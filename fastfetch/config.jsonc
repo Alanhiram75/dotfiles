@@ -21,7 +21,7 @@
         "break",
         {
             "type": "os",
-            "key": "Hp",
+            "key": "󰌢",
             "keyColor": "#b1cad8",
             "outputColor": "#e3e2e3"
         },
