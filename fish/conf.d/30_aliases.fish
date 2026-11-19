@@ -88,6 +88,7 @@ alias gc='git commit -m'          # <-- Hacer commit con mensaje
 alias glo='git log --oneline'     # <-- Ver historial de commits en una línea
 alias glo5='git log --oneline -5' # <-- Ver últimos 5 commits en una línea
 alias gco='git checkout'          # <-- Cambiar de rama o versión
+alias gsw='git switch'            # <-- Cambiar de rama rápidamente
 alias gbr='git branch'            # <-- Listar, crear o eliminar ramas
 alias gp='git push'               # <-- Subir cambios al repositorio remoto
 alias gpl='git pull'              # <-- Pull del repositorio remoto
